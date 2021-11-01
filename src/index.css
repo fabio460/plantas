@@ -31,6 +31,7 @@ body {
 }
 .link{
   cursor: pointer;
+  width: 100px;
 }
 .link:hover{
   color: orangered;
@@ -62,4 +63,66 @@ button{
   display: flex;
   justify-content: center;
   margin: 40px 60px;
+}
+.slide{
+  flex: 1;
+  overflow: hidden;
+  height: 500px;
+}
+.slide-width{
+  display: flex;
+  width: 300vw;
+  margin-left: 0px;
+}
+.slide-width img{
+  width: inherit;
+}
+.imagens{
+   height: 500px;
+   background-position:center;
+   background-size: cover;
+   
+   font-size: 18px;
+   text-shadow:1px 1px 3px black;
+   color: rgb(227, 255, 185);
+   display: flex;
+   align-items: center;
+}
+.imagens h1{
+  margin: 30px;
+}
+.i1{
+  background-image: url("http://ecotempclimatizacao.com.br/wp-content/uploads/2020/09/plantas-ar-condicionado-0.jpg");
+  width: 100vw;
+  
+  transition: 0.5s;
+}
+.i2{
+  background-image: url("http://ecotempclimatizacao.com.br/wp-content/uploads/2020/09/plantas-ar-condicionado-02.jpg");
+  width: 100vw;
+}
+.i3{
+  background-image: url("http://ecotempclimatizacao.com.br/wp-content/uploads/2020/09/plantas-ar-condicionado-03.jpg");
+  width: 100vw;
+}
+
+.slide-control{
+  cursor: pointer;
+  background-color: rgba(8, 8, 8,0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide-controls{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  margin: 0px;
+  
 }
