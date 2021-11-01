@@ -28,7 +28,11 @@ function Cadastro(){
             <input value={descricao} onChange={e => setDescricao(e.target.value)} placeholder='descricao'/>
             <input value={preco} onChange={e => setPreco(e.target.value)} placeholder='preço'/>
             <button onClick={postar}>postar</button>
-            
+
+       </div>
+       <div>
+               Obs: Para cadastrar imagem, clique com botão direito da imagem e em seguida, copiar url da imagem.
+               Após isso, cole no campo 'imagem'.
        </div>
     </>
 }

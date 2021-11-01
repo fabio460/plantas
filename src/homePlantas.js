@@ -25,7 +25,7 @@ function Home(){
         <h1 className='link' onClick={link_cadastro}>cadastro</h1>
         <div className='Lista_plantas'>
             {list.map((item)=>{
-            return <Planta titulo={item.titulo} imagem={item.imagem}/>
+            return <Planta titulo={item.titulo} imagem={item.imagem} objeto={item}/>
             })}
         </div>
     </>

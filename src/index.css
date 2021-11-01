@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(221, 182, 182);
+  background-color: rgb(141, 177, 141);
 }
 
 .planta img{
@@ -53,4 +53,13 @@ button{
   display: grid;
   grid-template-columns: repeat(5,1fr);
   gap: 15px;
+}
+.bloco_compra img{
+  width: 500px;
+  margin: 30px;
+}
+.bloco_compra{
+  display: flex;
+  justify-content: center;
+  margin: 40px 60px;
 }
