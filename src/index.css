@@ -7,7 +7,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.planta img{
+  width: 200px;
+  height: 140px;
+}
+.link{
+  cursor: pointer;
+}
+.link:hover{
+  color: orangered;
+}
+.formulario{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+.formulario input,button{
+  height: 30px;
+  margin: 5px 0px;
+}
+button{
+  cursor: pointer;
+}
+.Lista_plantas{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
 }
