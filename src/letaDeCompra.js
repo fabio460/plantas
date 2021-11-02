@@ -13,7 +13,6 @@ function TelaDeCompra(){
     <h1 className='link' onClick={home}>home</h1>
        <div className='bloco_compra'>
             <div>
-                
                 <h1>{titulo}</h1>
                 <div>{descricao}</div>
                 <div>{preco}</div>  

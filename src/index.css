@@ -74,7 +74,7 @@ button{
   width: 300vw;
   margin-left: 0px;
 }
-.slide-width img{
+.imagens img{
   width: inherit;
 }
 .imagens{
@@ -125,4 +125,32 @@ button{
   height: inherit;
   margin: 0px;
   
+}
+@media (max-width:400px) {
+  .Lista_plantas{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 15px;
+  }
+  .imagens img{
+    height: 250px;
+  }
+  .bloco_compra img{
+    width: 95%;
+    margin: auto;
+  }
+  .planta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 95%;
+    height: 300px;
+  }
+  .bloco_compra{
+    flex-direction: column;
+    width: 95%;
+    
+    margin: auto;
+  }
 }
