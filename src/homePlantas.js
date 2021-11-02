@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import {useHistory} from 'react-router-dom';
 import api from './api';
 import Planta from './planta';
-
+import i1 from './imagens/slide_1.jpg';
+import i2 from './imagens/slide_2.jpg';
+import i3 from './imagens/slide_3.jpg';
 function Home(){
-   
+    
    const [list,setList]=useState([]) 
    const h = useHistory();
    async function carregar(){
@@ -35,7 +37,7 @@ function Home(){
         document.querySelector('.i1').style=`margin-left:${contador}vw`
     }
 
-
+    
     return <>
        <header><h1 className='link' onClick={link_cadastro}>cadastro</h1></header>
         <div className='slide'>
@@ -45,14 +47,14 @@ function Home(){
             </div>
             <div className='slide-width'>
           
-                <div className='imagens i1'>
-
+                <div className='imagens i1' >
+                   <img src={i1} alt=''/>
                 </div>
                 <div className='imagens i2'>
-
+                   <img src={i2} alt=''/>
                 </div>
                 <div className='imagens i3'>
-
+                   <img src={i3} alt=''/>
                 </div>            
             </div>
         </div>
