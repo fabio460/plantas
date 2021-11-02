@@ -1,25 +1,29 @@
 import React,{useState} from "react";
 import { useHistory } from "react-router";
+import axios from 'axios';
 function Login(){
     
     const [email,setEmail]=useState();
     const [senha,setSenha]= useState();
-    
-    const auth = ()=>{
-      const formdata = new FormData();
-      formdata.append('nome','ana')
-      formdata.append('senha','an')
-       fetch('https://api-plantas.vercel.app/token',{
-        method:'POST',
-        body:JSON.stringify({"nome":"ana","senha":"an"}),
-        headers:{"Content-Type":"application/json"}
-      })
-      .then(res=>res.json())
-      .then(res=>console.log(res))
-      //.catch(res=>console.log(res));
-      //h.push('/')
-    }
     const h = useHistory()
+    const auth = ()=>{
+
+       axios.post('https://api-plantas.vercel.app/token',{
+          nome:email,
+          senha:senha
+        })
+        .then((res)=>{
+          console.log(res.data)
+           localStorage.setItem('token',res.data)
+           localStorage.setItem('usuario',res.data.usuario)
+        })
+        
+        h.push('/')
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+    }
+  
     return <>
         <button onClick={()=>h.push('/')}>voltar</button>
        <div className='formulario'>

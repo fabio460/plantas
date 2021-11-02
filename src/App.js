@@ -11,7 +11,7 @@ function App() {
   
   return (
     <div className="myApp">
-              <BrowserRouter>
+        <BrowserRouter>
            <Link to='/'></Link>
            <Link to='/cadastro'></Link>
            <Link to='/compra'></Link>

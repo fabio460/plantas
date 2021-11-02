@@ -19,8 +19,12 @@ function Cadastro(){
     const home = ()=>{
        h.push('/')
     }
+    const logout = ()=>{
+      localStorage.setItem('token','')
+    }
     return <>
        <h1 className='link' onClick={home}>home</h1>
+       <button onClick={logout}>deslogar</button>
        <div className='formulario'>
             <h1>Cadastro</h1>
             <input value={titulo} onChange={e => setTitulo(e.target.value)} placeholder='titulo'/>

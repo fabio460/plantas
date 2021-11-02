@@ -22,7 +22,13 @@ function Home(){
     },[])
     
     const link_cadastro = ()=>{
-        h.push('/cadastro')
+        if(localStorage.getItem('token')){
+            h.push('/cadastro')
+        }
+        else{
+            alert('para cadastrar precisa estar logado')
+            window.location.reload()
+        }
     }
     var contador = 0
     const slide_right = ()=>{
@@ -39,13 +45,23 @@ function Home(){
         document.querySelector('.i1').style=`margin-left:${contador}vw`
     }
 
-    
+    const logout = ()=>{
+        localStorage.setItem('token','');
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
+    }
+
+    setTimeout(() => {
+        localStorage.setItem('token','');
+    }, 30000);
     return <>
        <header>
            <a href='https://fabio460.github.io/Portifolio/'><img src={logo} alt=''/></a>
            <h1> Plantas & plantas </h1>
            <div className='header_2'>
-                <h5 onClick={()=>h.push('/login')} className='link'>login</h5>
+                {localStorage.getItem('token')?<h5 className='link' onClick={logout}>logout</h5>:<h5 onClick={()=>h.push('/login')} className='link'>login</h5>}
+                
                 <h5 className='link' onClick={link_cadastro}>cadastro</h5>
                 <a href='https://github.com/fabio460'><img src={git} alt=''/></a>
            </div>
