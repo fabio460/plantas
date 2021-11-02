@@ -26,8 +26,10 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 180px;
+  width: 290px;
+  
 }
+
 .planta img{
   width: 160px;
   height: 160px;
@@ -51,7 +53,7 @@ header{
 }
 .link{
   cursor: pointer;
-  max-width: 100px;
+  max-width: 200px;
 }
 .link:hover{
   color: orangered;
@@ -146,6 +148,11 @@ button{
   margin: 0px;
   
 }
+span{
+  color: blue;
+  text-decoration: underline;
+}
+
 @media (max-width:400px) {
   .Lista_plantas{
     display: grid;

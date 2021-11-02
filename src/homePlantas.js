@@ -62,7 +62,7 @@ function Home(){
            <div className='header_2'>
                 {localStorage.getItem('token')?<h5 className='link' onClick={logout}>logout</h5>:<h5 onClick={()=>h.push('/login')} className='link'>login</h5>}
                 
-                <h5 className='link' onClick={link_cadastro}>cadastro</h5>
+                <h5 className='link' onClick={link_cadastro}>cadastrar item</h5>
                 <a href='https://github.com/fabio460'><img src={git} alt=''/></a>
            </div>
        </header>

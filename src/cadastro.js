@@ -8,6 +8,10 @@ function Cadastro(){
     const [descricao,setDescricao]= useState();
     const [preco,setPreco]=useState();
     const h = useHistory()
+    const atualiza = localStorage.getItem('token');
+    if(!atualiza){
+       h.push('/')
+    }
     const postar = ()=>{
        if(titulo && imagem && descricao && preco){
         api.postar(titulo,imagem,descricao,preco)

@@ -14,26 +14,31 @@ function Login(){
         })
         .then((res)=>{
           console.log(res.data)
-           localStorage.setItem('token',res.data)
-           localStorage.setItem('usuario',res.data.usuario)
+          if(res.data === "usuario não cadastrado"){
+             alert('usuario ou senha, inválidos')
+          }else{
+            localStorage.setItem('token',res.data)
+            localStorage.setItem('usuario',res.data.usuario)
+            h.push('/')
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
+          }
         })
         
-        h.push('/')
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
+
     }
   
     return <>
-        <button onClick={()=>h.push('/')}>voltar</button>
-       <div className='formulario'>
-            <h1>Login</h1>
-            
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder='email'/>
-            <input value={senha} onChange={e => setSenha(e.target.value)} placeholder='senha'/>
-            <button onClick={auth}>logar</button>
-
-       </div>
+          <button onClick={()=>h.push('/')}>voltar</button>
+        <div className='formulario'>
+              <h1>Login</h1>
+              
+              <input value={email} onChange={e => setEmail(e.target.value)} placeholder='email'/>
+              <input type='password' value={senha} onChange={e => setSenha(e.target.value)} placeholder='senha'/>
+              <button onClick={auth}>logar</button>
+              <div>Senão e cadastrado <span onClick={()=>{h.push('/cadastrarUsuario')}} className='link '>cadastre-se</span></div>
+        </div>
 
       
     </>
