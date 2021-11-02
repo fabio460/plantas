@@ -92,17 +92,17 @@ button{
   margin: 30px;
 }
 .i1{
-  background-image: url("http://ecotempclimatizacao.com.br/wp-content/uploads/2020/09/plantas-ar-condicionado-0.jpg");
+  background-image: url("../public/imagens/slide_1.jpg");
   width: 100vw;
   
   transition: 0.5s;
 }
 .i2{
-  background-image: url("http://ecotempclimatizacao.com.br/wp-content/uploads/2020/09/plantas-ar-condicionado-02.jpg");
+  background-image: url("../public/imagens/slide_2.jpg");
   width: 100vw;
 }
 .i3{
-  background-image: url("http://ecotempclimatizacao.com.br/wp-content/uploads/2020/09/plantas-ar-condicionado-03.jpg");
+  background-image: url("../public/imagens/slide_3.jpg");
   width: 100vw;
 }
 
