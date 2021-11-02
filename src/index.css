@@ -6,8 +6,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(141, 177, 141);
+  font-size: 20px;
+  text-shadow: white 0.5px 0.5px 3px;
 }
-
+header img{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  position:initial;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0px 50px;
+  
+}
+.header_2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 180px;
+}
 .planta img{
   width: 160px;
   height: 160px;
@@ -31,7 +51,7 @@ body {
 }
 .link{
   cursor: pointer;
-  width: 100px;
+  max-width: 100px;
 }
 .link:hover{
   color: orangered;
@@ -152,5 +172,12 @@ button{
     width: 95%;
     
     margin: auto;
+  }
+  header{
+    margin: 5px;
+  }
+  header h1{
+    font-size: 17px;
+    display: none;
   }
 }

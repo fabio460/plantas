@@ -5,6 +5,8 @@ import Planta from './planta';
 import i1 from './imagens/slide_1.jpg';
 import i2 from './imagens/slide_2.jpg';
 import i3 from './imagens/slide_3.jpg';
+import logo from './imagens/logo.jpg';
+import git from './imagens/github.png';
 function Home(){
     
    const [list,setList]=useState([]) 
@@ -39,7 +41,16 @@ function Home(){
 
     
     return <>
-       <header><h1 className='link' onClick={link_cadastro}>cadastro</h1></header>
+       <header>
+           <a href='https://fabio460.github.io/Portifolio/'><img src={logo} alt=''/></a>
+           <h1> Plantas & plantas </h1>
+           <div className='header_2'>
+                <h5 onClick={()=>h.push('/login')} className='link'>login</h5>
+                <h5 className='link' onClick={link_cadastro}>cadastro</h5>
+                <a href='https://github.com/fabio460'><img src={git} alt=''/></a>
+           </div>
+       </header>
+       <div></div>
         <div className='slide'>
             <div className='slide-controls'>
                 <div  onClick={slide_left}  className='slide-control'>{"<"}</div>
