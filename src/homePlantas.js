@@ -18,7 +18,8 @@ function Home(){
         setList(l)
     }
     useEffect(()=>{
-        carregar()
+        carregar();
+        
     },[])
     
     const link_cadastro = ()=>{
@@ -32,6 +33,7 @@ function Home(){
     }
     var contador = 0
     const slide_right = ()=>{
+        
         if(contador > (-200) ){
             contador-=100;
         }
@@ -39,12 +41,31 @@ function Home(){
         document.querySelector('.i1').style=`margin-left:${contador}vw`
     }
     const slide_left = ()=>{
+    
         if(contador < 0 ){
             contador+=100;
         }
         document.querySelector('.i1').style=`margin-left:${contador}vw`
     }
 
+    const girarSlide = ()=>{
+        setInterval(() => {
+            setTimeout(() => {
+                document.querySelector('.i1').style=`margin-left:-100vw`
+                setTimeout(() => {
+                    document.querySelector('.i1').style=`margin-left:-200vw`
+                    setTimeout(() => {
+                        document.querySelector('.i1').style=`margin-left:-100vw`
+                        setTimeout(() => {
+                            document.querySelector('.i1').style=`margin-left:0vw`
+                        }, 6000);
+                    }, 6000);
+                }, 6000);
+            }, 6000);
+        }, 24000);
+    }
+
+    girarSlide();
     const logout = ()=>{
         localStorage.setItem('token','');
         setTimeout(() => {

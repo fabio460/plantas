@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {useHistory} from 'react-router-dom';
+import axios from 'axios';
 function CadastrarUsuario(){
     const [nome,setNome] = useState();
     const [email,setEmail]=useState();
@@ -7,6 +8,19 @@ function CadastrarUsuario(){
     const h = useHistory()
     const cadastrar = ()=>{
         
+    if(nome && email && senha){
+        axios.post('https://api-plantas.vercel.app/cadastrarusuario',{
+            nome:nome,
+            email:email,
+            senha:senha
+        }).then(res=>alert(res.data))
+        setTimeout(() => {
+            h.push('/')
+        }, 1000);
+    }else{
+        alert('campos não preechidos')
+    }
+    
     }
     return <>
         <button onClick={()=>h.push('/')}>voltar</button>
