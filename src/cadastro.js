@@ -24,7 +24,8 @@ function Cadastro(){
        h.push('/')
     }
     const logout = ()=>{
-     // localStorage.setItem('token','')
+      localStorage.setItem('token','');
+      localStorage.setItem('usuario','');
     }
     return <>
        <h1 className='link' onClick={home}>home</h1>

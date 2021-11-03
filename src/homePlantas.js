@@ -71,13 +71,14 @@ function Home(){
     
     const logout = ()=>{
         localStorage.setItem('token','');
+        localStorage.setItem('usuario','');
         setTimeout(() => {
             window.location.reload();
         }, 1000);
     }
 
     setTimeout(() => {
-        localStorage.setItem('token','');
+       // localStorage.setItem('token','');
     }, 30000);
     
     const login = ()=>{
@@ -87,13 +88,15 @@ function Home(){
     }
      
     girarSlide(false);
+    var user = localStorage.getItem('usuario');
+  
     return <>
        <header>
            <a href='https://fabio460.github.io/Portifolio/'><img src={logo} alt=''/></a>
            <h1> Plantas & plantas </h1>
            <div className='header_2'>
                 {localStorage.getItem('token')?<h5 className='link' onClick={logout}>logout</h5>:<h5 onClick={login} className='link'>login</h5>}
-                
+                <div className='usuario'>{user}</div>
                 <h5 className='link' onClick={link_cadastro}>cadastrar item</h5>
                 <a href='https://github.com/fabio460'><img src={git} alt=''/></a>
            </div>

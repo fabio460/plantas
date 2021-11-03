@@ -20,6 +20,7 @@ function Login(){
           }else{
             localStorage.setItem('token',res.data)
             localStorage.setItem('usuario',res.data.usuario)
+            
             h.push('/')
             setTimeout(() => {
               window.location.reload();
