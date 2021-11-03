@@ -9,12 +9,13 @@ function Login(){
     const auth = ()=>{
 
        axios.post('https://api-plantas.vercel.app/token',{
-          nome:email,
+          Headers:{"Content-Type":"application/json"},
+          email:email,
           senha:senha
         })
         .then((res)=>{
           console.log(res.data)
-          if(res.data === "usuario não cadastrado"){
+          if(res.data === "usuario não encontrado"){
              alert('usuario ou senha, inválidos')
           }else{
             localStorage.setItem('token',res.data)
@@ -25,6 +26,7 @@ function Login(){
             }, 500);
           }
         })
+        //.catch((res)=>console.log(res))
         
 
     }
