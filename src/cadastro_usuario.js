@@ -8,25 +8,24 @@ function CadastrarUsuario(){
     const h = useHistory()
     const cadastrar = async()=>{
      
-     const existeEmail =await axios(`https://api-plantas.vercel.app/listarusuariopelonome/${email}`);
+        const existeEmail =await axios(`https://api-plantas.vercel.app/listarusuariopelonome/${email}`);
         
-    if(nome && email && senha ){
-      if(existeEmail === "não encontrado"){
-        axios.post('https://api-plantas.vercel.app/cadastrarusuario',{
-            nome:nome,
-            email:email,
-            senha:senha
-        }).then(res=>alert(res.data))
-        setTimeout(() => {
-            h.push('/')
-        }, 1000);
-      }else{
-          alert('ja existe este email cadastrado')
-      }
-    }else{
-        alert('campos não preechidos')
-    }
-    
+        if(nome && email && senha ){
+            
+            if(existeEmail.data === "não encontrado"){
+                    axios.post('https://api-plantas.vercel.app/cadastrarusuario',{
+                        nome:nome,
+                        email:email,
+                        senha:senha
+                    })
+                    .then(res=>alert('email cadastrado com sucesso'))
+                    setTimeout(() => {
+                        h.push('/')
+                    }, 1000);
+            }
+            else{alert('ja existe este email cadastrado')}
+        }
+        else{alert("campos invalidos ou vazios")}
     }
     return <>
         <button onClick={()=>h.push('/')}>voltar</button>
