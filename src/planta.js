@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 function Planta({titulo,imagem,objeto}){
     const h = useHistory();
     const click = ()=>{
+        
         localStorage.setItem('titulo',objeto.titulo)
         localStorage.setItem('imagem',objeto.imagem)
         localStorage.setItem('descricao',objeto.descricao)

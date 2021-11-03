@@ -15,7 +15,8 @@ function Home(){
         document.querySelector('.Lista_plantas').innerHTML='carregando ...'
         const l =await api.listar();
         document.querySelector('.Lista_plantas').innerHTML=''
-        setList(l)
+        setList(l);
+        
     }
     useEffect(()=>{
         carregar();
@@ -48,24 +49,26 @@ function Home(){
         document.querySelector('.i1').style=`margin-left:${contador}vw`
     }
 
-    const girarSlide = ()=>{
-        setInterval(() => {
-            setTimeout(() => {
-                document.querySelector('.i1').style=`margin-left:-100vw`
+    const girarSlide = (condicao)=>{
+        if(condicao){
+            setInterval(() => {
                 setTimeout(() => {
-                    document.querySelector('.i1').style=`margin-left:-200vw`
+                    document.querySelector('.i1').style=`margin-left:-100vw`
                     setTimeout(() => {
-                        document.querySelector('.i1').style=`margin-left:-100vw`
+                        document.querySelector('.i1').style=`margin-left:-200vw`
                         setTimeout(() => {
-                            document.querySelector('.i1').style=`margin-left:0vw`
+                            document.querySelector('.i1').style=`margin-left:-100vw`
+                            setTimeout(() => {
+                                document.querySelector('.i1').style=`margin-left:0vw`
+                            }, 6000);
                         }, 6000);
                     }, 6000);
                 }, 6000);
-            }, 6000);
-        }, 24000);
+            }, 24000);
+        }
     }
 
-    girarSlide();
+    
     const logout = ()=>{
         localStorage.setItem('token','');
         setTimeout(() => {
@@ -76,12 +79,20 @@ function Home(){
     setTimeout(() => {
         localStorage.setItem('token','');
     }, 30000);
+    
+    const login = ()=>{
+
+        h.push('/login')
+        
+    }
+     
+    girarSlide(false);
     return <>
        <header>
            <a href='https://fabio460.github.io/Portifolio/'><img src={logo} alt=''/></a>
            <h1> Plantas & plantas </h1>
            <div className='header_2'>
-                {localStorage.getItem('token')?<h5 className='link' onClick={logout}>logout</h5>:<h5 onClick={()=>h.push('/login')} className='link'>login</h5>}
+                {localStorage.getItem('token')?<h5 className='link' onClick={logout}>logout</h5>:<h5 onClick={login} className='link'>login</h5>}
                 
                 <h5 className='link' onClick={link_cadastro}>cadastrar item</h5>
                 <a href='https://github.com/fabio460'><img src={git} alt=''/></a>
@@ -108,7 +119,7 @@ function Home(){
         </div>
         <div className='Lista_plantas'>
             {list.map((item)=>{
-            return <Planta titulo={item.titulo} imagem={item.imagem} objeto={item}/>
+            return <Planta titulo={item.titulo} imagem={item.imagem} objeto={item} />
             })}
         </div>
     </>
