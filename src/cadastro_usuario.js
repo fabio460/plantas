@@ -6,9 +6,12 @@ function CadastrarUsuario(){
     const [email,setEmail]=useState();
     const [senha,setSenha]= useState();
     const h = useHistory()
-    const cadastrar = ()=>{
+    const cadastrar = async()=>{
+     
+     const existeEmail =await axios(`https://api-plantas.vercel.app/listarusuariopelonome/${email}`);
         
-    if(nome && email && senha){
+    if(nome && email && senha ){
+      if(existeEmail === "não encontrado"){
         axios.post('https://api-plantas.vercel.app/cadastrarusuario',{
             nome:nome,
             email:email,
@@ -17,6 +20,9 @@ function CadastrarUsuario(){
         setTimeout(() => {
             h.push('/')
         }, 1000);
+      }else{
+          alert('ja existe este email cadastrado')
+      }
     }else{
         alert('campos não preechidos')
     }
