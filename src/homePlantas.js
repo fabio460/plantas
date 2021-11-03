@@ -88,7 +88,12 @@ function Home(){
     }
      
     girarSlide(false);
-    var user = localStorage.getItem('usuario');
+    if(localStorage.getItem('token')){
+        var user = localStorage.getItem('usuario');
+    }
+    else{
+        user=''
+    }
   
     return <>
        <header>

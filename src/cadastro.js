@@ -16,6 +16,7 @@ function Cadastro(){
        if(titulo && imagem && descricao && preco){
         api.postar(titulo,imagem,descricao,preco)
         alert('cadastrado com sucesso')
+        h.push('/')
        }else{
            alert('campos sem preencher')
        }
